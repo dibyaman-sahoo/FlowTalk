@@ -454,12 +454,12 @@ Two browser windows connected to the same Flowtalk server demonstrate real-time 
 ![Flowtalk Two User Chat](screenshots/twouserchat.png)
 
 ---
-
 ## ⚙️ Working Process
 
 <p align="center">
-  <img src="YOUR-GIF-FILE-PATH-OR-URL" alt="Flowtalk Working Process" width="850">
+  <img src="flowtalk-working-process.gif" alt="Flowtalk Working Process" width="850">
 </p>
+
 
 ## 🎨 User Interface
 
