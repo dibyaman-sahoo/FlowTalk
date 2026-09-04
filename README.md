@@ -458,7 +458,7 @@ Two browser windows connected to the same Flowtalk server demonstrate real-time 
 
 The GIF below demonstrates the real-time working process of Flowtalk, showcasing how users connect and exchange messages instantly.
 
-![Flowtalk Working Process](flowtalk-working-process.gif)
+![Flowtalk Working Process](screenshots/flowtalk-working-process.gif)
 
 
 ## 🎨 User Interface
