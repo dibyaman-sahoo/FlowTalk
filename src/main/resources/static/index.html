@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0">
+
+    <title>Flowtalk - Real Time Chat</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="background">
+    <div class="blob blob-one"></div>
+    <div class="blob blob-two"></div>
+    <div class="blob blob-three"></div>
+</div>
+
+<!-- LOGIN SCREEN -->
+
+<div id="loginScreen" class="login-screen">
+
+    <div class="login-card">
+
+        <div class="logo">
+            <div class="logo-icon">F</div>
+            <span>Flowtalk</span>
+        </div>
+
+        <h1>Welcome to Flowtalk</h1>
+
+        <p>
+            Connect, chat and share moments in real time.
+        </p>
+
+        <input
+                id="usernameInput"
+                type="text"
+                maxlength="20"
+                placeholder="Enter your name"
+                autocomplete="off">
+
+        <button id="joinButton">
+            Join Chat
+            <span>→</span>
+        </button>
+
+        <div class="login-status">
+            🔒 Your conversation is live
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- MAIN CHAT -->
+
+<div id="chatApp" class="chat-app hidden">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="logo-icon small">
+                F
+            </div>
+
+            <div>
+                <h2>Flowtalk</h2>
+                <span>Real-time chat</span>
+            </div>
+
+        </div>
+
+        <div class="sidebar-section">
+
+            <div class="section-title">
+
+                <span>ONLINE MEMBERS</span>
+
+                <span
+                        id="onlineCount"
+                        class="online-count">
+                    0
+                </span>
+
+            </div>
+
+            <div id="usersList" class="users-list"></div>
+
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <div class="connection-box">
+
+                <span
+                        id="connectionDot"
+                        class="connection-dot">
+                </span>
+
+                <div>
+                    <strong id="connectionText">
+                        Connecting...
+                    </strong>
+
+                    <small>
+                        WebSocket connection
+                    </small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CHAT AREA -->
+
+    <main class="chat-area">
+
+        <header class="chat-header">
+
+            <div>
+
+                <h1>Global Chat</h1>
+
+                <p>
+                    Everyone can see your messages
+                </p>
+
+            </div>
+
+            <div class="header-status">
+                <span class="pulse"></span>
+                Live
+            </div>
+
+        </header>
+
+
+        <section
+                id="messages"
+                class="messages">
+
+            <div class="welcome-message">
+
+                <div class="welcome-icon">
+                    💬
+                </div>
+
+                <h2>Welcome to Flowtalk</h2>
+
+                <p>
+                    Start a conversation with everyone online.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <div
+                id="typingIndicator"
+                class="typing-indicator">
+        </div>
+
+
+        <form
+                id="messageForm"
+                class="message-form">
+
+            <input
+                    id="messageInput"
+                    type="text"
+                    placeholder="Type a message..."
+                    autocomplete="off"
+                    maxlength="500">
+
+            <button
+                    id="sendButton"
+                    type="submit">
+
+                <span>Send</span>
+
+                <span class="send-icon">
+                    ➤
+                </span>
+
+            </button>
+
+        </form>
+
+        <div class="chat-footer">
+            Press Enter to send
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.2.1/bundles/stomp.umd.min.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
