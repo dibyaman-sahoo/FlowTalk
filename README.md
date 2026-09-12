@@ -748,7 +748,4 @@ The application is also **Dockerized and deployed on Render**, making the projec
 
 ⭐ If you found this project useful, consider giving the repository a star!
 
-```
-
-
-[1]: https://github.com/dibyaman-sahoo/FlowTalk "GitHub - dibyaman-sahoo/FlowTalk: Flowtalk is a modern real-time chat application built with Spring Boot, WebSockets, STOMP, HTML, CSS, and JavaScript, featuring instant messaging, online user tracking, typing indicators, join/leave notifications, automatic reconnection, and a responsive animated UI. · GitHub"
+``
