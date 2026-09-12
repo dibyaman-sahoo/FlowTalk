@@ -320,38 +320,31 @@ folder.
 ## 1. Flowtalk Welcome Screen
 
 The welcome screen allows users to enter their username and join the chat.
+![Flowtalk Welcome Screen](screenshots/entername_join.png)
 
-> Replace the filename below with the exact filename inside `screenshots/`.
-
-```text
-screenshots/<welcome-screen-filename>
-```
 
 ---
 
 ## 2. Spring Boot Console
 
 The IntelliJ IDEA console showing the Spring Boot application running successfully.
+![Flowtalk Spring Boot Console](screenshots/runconsole_8081.png)
 
-```text
-screenshots/<spring-boot-console-filename>
-```
+
 
 ---
 
 ## 3. Two-User Real-Time Chat
 
 Two browser users connected to the same Flowtalk server and exchanging messages in real time.
-
-```text
-screenshots/<two-user-chat-filename>
-```
+![Flowtalk Two User Chat](screenshots/twouserchat.png)
 
 ---
 
 # 🎬 Working Process
 
 The working-process GIF demonstrates the complete real-time communication flow:
+![Flowtalk Welcome Screen](screenshots/entername_join.png)
 
 ```text
 User 1
@@ -757,11 +750,5 @@ The application is also **Dockerized and deployed on Render**, making the projec
 
 ```
 
-### One thing you should do before pushing
-
-The current repository's README still has **“☁️ Cloud deployment” under Future Improvements**, even though FlowTalk is already deployed on Render. I removed that from the updated version above. Your current repo also already has the `Dockerfile` and Render URL in the repository metadata. :contentReference[oaicite:1]{index=1}
-
-For the screenshots, I intentionally **didn't invent the filenames**. If you want me to make those image/GIF links **100% exact**, upload the `screenshots` folder (or the three screenshots + GIF), and I'll give you the final README with the exact paths.
-```
 
 [1]: https://github.com/dibyaman-sahoo/FlowTalk "GitHub - dibyaman-sahoo/FlowTalk: Flowtalk is a modern real-time chat application built with Spring Boot, WebSockets, STOMP, HTML, CSS, and JavaScript, featuring instant messaging, online user tracking, typing indicators, join/leave notifications, automatic reconnection, and a responsive animated UI. · GitHub"
