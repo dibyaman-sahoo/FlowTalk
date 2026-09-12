@@ -5,15 +5,17 @@
 }
 
 :root {
-    --bg: #080b14;
-    --panel: rgba(16, 20, 34, 0.82);
-    --panel-light: rgba(255, 255, 255, 0.06);
-    --border: rgba(255, 255, 255, 0.09);
-    --text: #f5f7ff;
-    --muted: #9298ad;
-    --accent: #7c5cff;
-    --accent-2: #5d8cff;
-    --success: #31d68b;
+    --bg: #05070d;
+    --panel: rgba(10, 14, 22, 0.88);
+    --panel-light: rgba(0, 255, 178, 0.06);
+    --border: rgba(0, 255, 178, 0.18);
+    --text: #eafffa;
+    --muted: #6f8a8a;
+    --accent: #00ffb2;
+    --accent-2: #ff2d95;
+    --accent-3: #00c8ff;
+    --success: #39ff8a;
+    --danger: #ff3860;
 }
 
 body {
@@ -21,14 +23,15 @@ body {
     background: var(--bg);
     color: var(--text);
     font-family:
-            Inter,
+            "Rajdhani",
+            "Orbitron",
             ui-sans-serif,
             system-ui,
             -apple-system,
-            BlinkMacSystemFont,
             "Segoe UI",
             sans-serif;
     overflow: hidden;
+    letter-spacing: 0.01em;
 }
 
 button,
@@ -48,33 +51,37 @@ button {
     inset: 0;
     overflow: hidden;
     z-index: -1;
+    background-image:
+        linear-gradient(rgba(0, 255, 178, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 178, 0.05) 1px, transparent 1px);
+    background-size: 42px 42px;
 }
 
 .blob {
     position: absolute;
     width: 500px;
     height: 500px;
-    border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.25;
-    animation: float 12s infinite ease-in-out;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    filter: blur(120px);
+    opacity: 0.3;
+    animation: float 10s infinite ease-in-out;
 }
 
 .blob-one {
-    background: #7c5cff;
+    background: var(--accent);
     top: -180px;
     left: -120px;
 }
 
 .blob-two {
-    background: #ff4ecd;
+    background: var(--accent-2);
     right: -160px;
     top: 20%;
     animation-delay: -4s;
 }
 
 .blob-three {
-    background: #168cff;
+    background: var(--accent-3);
     bottom: -250px;
     left: 30%;
     animation-delay: -7s;
@@ -83,11 +90,11 @@ button {
 @keyframes float {
 
     0%, 100% {
-        transform: translate(0, 0);
+        transform: translate(0, 0) rotate(0deg);
     }
 
     50% {
-        transform: translate(40px, -30px);
+        transform: translate(40px, -30px) rotate(8deg);
     }
 }
 
@@ -106,13 +113,16 @@ button {
     width: 100%;
     max-width: 430px;
     padding: 42px;
-    background: rgba(16, 20, 34, 0.78);
+    background: rgba(8, 12, 18, 0.9);
     border: 1px solid var(--border);
-    border-radius: 28px;
-    backdrop-filter: blur(25px);
-    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.45);
+    border-radius: 6px;
+    clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
+    box-shadow:
+        0 0 0 1px rgba(0, 255, 178, 0.08),
+        0 30px 100px rgba(0, 255, 178, 0.12),
+        0 0 60px rgba(255, 45, 149, 0.06);
     text-align: center;
-    animation: cardIn 0.7s ease;
+    animation: cardIn 0.6s ease;
 }
 
 @keyframes cardIn {
@@ -136,6 +146,9 @@ button {
     font-size: 25px;
     font-weight: 800;
     margin-bottom: 30px;
+    text-transform: uppercase;
+    font-family: "Orbitron", sans-serif;
+    text-shadow: 0 0 18px rgba(0, 255, 178, 0.5);
 }
 
 .logo-icon {
@@ -144,25 +157,27 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 14px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     background: linear-gradient(
             135deg,
             var(--accent),
-            var(--accent-2)
+            var(--accent-3)
     );
+    color: #05070d;
     font-weight: 900;
-    box-shadow: 0 10px 30px rgba(124, 92, 255, 0.35);
+    box-shadow: 0 0 30px rgba(0, 255, 178, 0.5);
 }
 
 .logo-icon.small {
     width: 40px;
     height: 40px;
-    border-radius: 12px;
 }
 
 .login-card h1 {
     font-size: 32px;
     margin-bottom: 12px;
+    font-family: "Orbitron", sans-serif;
+    text-transform: uppercase;
 }
 
 .login-card p {
@@ -175,37 +190,39 @@ button {
     width: 100%;
     border: 1px solid var(--border);
     outline: none;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 255, 178, 0.04);
     color: white;
     padding: 15px 17px;
-    border-radius: 14px;
+    border-radius: 4px;
     margin-bottom: 13px;
     transition: 0.25s;
 }
 
 .login-card input:focus {
     border-color: var(--accent);
-    box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.12);
+    box-shadow: 0 0 0 3px rgba(0, 255, 178, 0.15);
 }
 
 .login-card button {
     width: 100%;
     border: none;
     padding: 15px;
-    border-radius: 14px;
+    border-radius: 4px;
     background: linear-gradient(
             135deg,
             var(--accent),
-            var(--accent-2)
+            var(--accent-3)
     );
-    color: white;
-    font-weight: 700;
-    transition: 0.25s;
+    color: #05070d;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: 0.2s;
 }
 
 .login-card button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 15px 35px rgba(124, 92, 255, 0.3);
+    box-shadow: 0 0 35px rgba(0, 255, 178, 0.45);
 }
 
 .login-status {
@@ -238,9 +255,9 @@ button {
     flex-direction: column;
     background: var(--panel);
     border: 1px solid var(--border);
-    border-radius: 25px;
-    backdrop-filter: blur(25px);
+    border-radius: 6px;
     overflow: hidden;
+    box-shadow: inset 0 0 40px rgba(0, 255, 178, 0.03);
 }
 
 .brand {
@@ -253,6 +270,8 @@ button {
 
 .brand h2 {
     font-size: 19px;
+    font-family: "Orbitron", sans-serif;
+    text-transform: uppercase;
 }
 
 .brand span {
@@ -271,13 +290,15 @@ button {
     justify-content: space-between;
     color: var(--muted);
     font-size: 11px;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     font-weight: 700;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .online-count {
     color: var(--success);
+    text-shadow: 0 0 8px rgba(57, 255, 138, 0.6);
 }
 
 .users-list {
@@ -291,37 +312,42 @@ button {
     align-items: center;
     gap: 12px;
     padding: 10px;
-    border-radius: 12px;
+    border-radius: 4px;
+    border: 1px solid transparent;
     transition: 0.2s;
 }
 
 .user:hover {
     background: var(--panel-light);
+    border-color: var(--border);
 }
 
 .avatar {
     width: 38px;
     height: 38px;
-    border-radius: 50%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(
             135deg,
-            #7c5cff,
-            #5d8cff
+            var(--accent),
+            var(--accent-2)
     );
-    font-weight: 700;
+    color: #05070d;
+    font-weight: 800;
 }
 
 .user-name {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .user-status {
     font-size: 11px;
     color: var(--success);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .sidebar-bottom {
@@ -334,13 +360,15 @@ button {
     align-items: center;
     gap: 12px;
     padding: 13px;
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.04);
+    border-radius: 4px;
+    background: rgba(0, 255, 178, 0.04);
+    border: 1px solid var(--border);
 }
 
 .connection-box strong {
     display: block;
     font-size: 12px;
+    text-transform: uppercase;
 }
 
 .connection-box small {
@@ -352,8 +380,8 @@ button {
     width: 9px;
     height: 9px;
     border-radius: 50%;
-    background: #f2b84b;
-    box-shadow: 0 0 10px currentColor;
+    background: var(--accent-2);
+    box-shadow: 0 0 12px currentColor;
 }
 
 
@@ -366,9 +394,9 @@ button {
     flex-direction: column;
     background: var(--panel);
     border: 1px solid var(--border);
-    border-radius: 25px;
-    backdrop-filter: blur(25px);
+    border-radius: 6px;
     overflow: hidden;
+    box-shadow: inset 0 0 60px rgba(0, 255, 178, 0.03);
 }
 
 .chat-header {
@@ -377,10 +405,13 @@ button {
     justify-content: space-between;
     padding: 24px 28px;
     border-bottom: 1px solid var(--border);
+    background: linear-gradient(90deg, rgba(0, 255, 178, 0.05), transparent);
 }
 
 .chat-header h1 {
     font-size: 20px;
+    font-family: "Orbitron", sans-serif;
+    text-transform: uppercase;
 }
 
 .chat-header p {
@@ -393,11 +424,14 @@ button {
     display: flex;
     align-items: center;
     gap: 7px;
-    padding: 7px 12px;
-    border-radius: 20px;
-    background: rgba(49, 214, 139, 0.08);
+    padding: 7px 14px;
+    border-radius: 4px;
+    background: rgba(57, 255, 138, 0.08);
+    border: 1px solid rgba(57, 255, 138, 0.25);
     color: var(--success);
     font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .pulse {
@@ -411,11 +445,11 @@ button {
 @keyframes pulse {
 
     0%, 100% {
-        box-shadow: 0 0 0 0 rgba(49, 214, 139, 0.4);
+        box-shadow: 0 0 0 0 rgba(57, 255, 138, 0.5);
     }
 
     50% {
-        box-shadow: 0 0 0 7px rgba(49, 214, 139, 0);
+        box-shadow: 0 0 0 8px rgba(57, 255, 138, 0);
     }
 }
 
@@ -444,22 +478,25 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
-    background: rgba(124, 92, 255, 0.1);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: rgba(0, 255, 178, 0.1);
     font-size: 30px;
     margin-bottom: 18px;
+    box-shadow: 0 0 40px rgba(0, 255, 178, 0.15);
 }
 
 .welcome-message h2 {
     color: white;
     margin-bottom: 8px;
+    font-family: "Orbitron", sans-serif;
+    text-transform: uppercase;
 }
 
 .message {
     display: flex;
     gap: 12px;
     margin-bottom: 18px;
-    animation: messageIn 0.35s ease;
+    animation: messageIn 0.3s ease;
 }
 
 @keyframes messageIn {
@@ -479,17 +516,18 @@ button {
     width: 38px;
     height: 38px;
     flex-shrink: 0;
-    border-radius: 50%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(
             135deg,
-            #7c5cff,
-            #5d8cff
+            var(--accent),
+            var(--accent-2)
     );
+    color: #05070d;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .message-content {
@@ -505,7 +543,9 @@ button {
 
 .message-sender {
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
 }
 
 .message-time {
@@ -516,10 +556,10 @@ button {
 .message-text {
     display: inline-block;
     padding: 11px 14px;
-    background: rgba(255, 255, 255, 0.055);
+    background: rgba(0, 255, 178, 0.04);
     border: 1px solid var(--border);
-    border-radius: 6px 15px 15px 15px;
-    color: #e9ebf4;
+    border-radius: 2px 12px 12px 12px;
+    color: #dfffef;
     font-size: 14px;
     line-height: 1.5;
     word-break: break-word;
@@ -530,12 +570,14 @@ button {
     color: var(--muted);
     font-size: 12px;
     margin: 14px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .typing-indicator {
     height: 22px;
     padding: 0 28px;
-    color: var(--muted);
+    color: var(--accent);
     font-size: 11px;
 }
 
@@ -554,34 +596,37 @@ button {
     min-width: 0;
     outline: none;
     border: 1px solid var(--border);
-    background: rgba(255, 255, 255, 0.045);
+    background: rgba(0, 255, 178, 0.03);
     color: white;
     padding: 14px 16px;
-    border-radius: 14px;
+    border-radius: 4px;
     transition: 0.2s;
 }
 
 .message-form input:focus {
     border-color: var(--accent);
-    box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(0, 255, 178, 0.1);
 }
 
 .message-form button {
     border: none;
-    border-radius: 14px;
+    border-radius: 4px;
     padding: 0 20px;
     background: linear-gradient(
             135deg,
             var(--accent),
-            var(--accent-2)
+            var(--accent-3)
     );
-    color: white;
-    font-weight: 700;
+    color: #05070d;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     transition: 0.2s;
 }
 
 .message-form button:hover {
     transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(0, 255, 178, 0.4);
 }
 
 .send-icon {
@@ -590,9 +635,11 @@ button {
 
 .chat-footer {
     text-align: center;
-    color: #676d82;
+    color: #4a5a5a;
     font-size: 10px;
     padding-bottom: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 
@@ -607,7 +654,7 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 255, 178, 0.25);
     border-radius: 10px;
 }
 
@@ -630,7 +677,7 @@ button {
     }
 
     .chat-area {
-        border-radius: 18px;
+        border-radius: 6px;
     }
 
     .chat-header {
