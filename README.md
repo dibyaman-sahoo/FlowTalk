@@ -344,7 +344,7 @@ Two browser users connected to the same Flowtalk server and exchanging messages 
 # 🎬 Working Process
 
 The working-process GIF demonstrates the complete real-time communication flow:
-![Flowtalk Welcome Screen](screenshots/entername_join.png)
+![Flowtalk Welcome Screen](screenshots/flowtalk-working-process.gif)
 
 ```text
 User 1
