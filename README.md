@@ -362,12 +362,6 @@ Connected Users
 Real-Time Message Display
 ```
 
-Add the actual GIF from your `screenshots` folder here:
-
-```text
-screenshots/<working-process-gif-filename>
-```
-
 ---
 
 # 🎨 User Interface
