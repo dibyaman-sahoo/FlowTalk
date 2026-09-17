@@ -1,4 +1,5 @@
 ![Flowtalk Banner](screenshots/flowtalk-cover-banner.gif)
+
 # Flowtalk — Real-Time Chat Application
 
 > A modern real-time web chat application built with Spring Boot, WebSockets, STOMP, HTML, CSS, and JavaScript.
