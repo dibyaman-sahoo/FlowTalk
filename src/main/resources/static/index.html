@@ -211,7 +211,7 @@
 
 </div>
 <script>
-// Fullscreen toggle: F key, Esc key (desktop) + double-tap (mobile) — like YouTube
+// Fullscreen toggle: F2 key, Esc key (desktop) + double-tap (mobile) — like YouTube
 (function(){
   "use strict";
 
@@ -238,7 +238,7 @@
   document.addEventListener('keydown', function(e){
     if (isTypingContext(document.activeElement)) return;
 
-    if (e.key === 'f2' || e.key === 'F2') {
+    if (e.key === 'F2') {
       e.preventDefault();
       toggleFullscreen();
     } else if (e.key === 'Escape' && document.fullscreenElement) {
