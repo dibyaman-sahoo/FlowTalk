@@ -670,7 +670,7 @@ window.addEventListener(
     if (isTypingContext(document.activeElement)) return;
 
     // CHANGED: Checks for the Shift key
-    if (e.key === 'Shift') {
+    if (e.key === 'Escape') {
       e.preventDefault(); 
       toggleFullscreen();
     } else if (e.key === 'Escape' && document.fullscreenElement) {
