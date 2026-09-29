@@ -191,7 +191,6 @@ function subscribeToTopics() {
     stompClient.subscribe(
         "/topic/users",
         function (message) {
-
             const userStatus =
                 JSON.parse(message.body);
 
